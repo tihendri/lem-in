@@ -6,7 +6,7 @@ CC      = gcc
 ALGO    =	algorithm/find_all_paths.c algorithm/find_no_intersecting_paths.c \
 			algorithm/find_room.c algorithm/find_tunnels_with_rooms.c \
 			algorithm/parse_rooms.c algorithm/parse_tunnels.c \
-			algorithm/send_ants_on_paths.c
+			algorithm/send_ants.c
 
 PRINT	=	printing/print_ants.c printing/print_ants_on_screen.c
 
@@ -25,11 +25,11 @@ MAIN	=	main.c
 
 SRCS	=	$(ALGO) $(PRINT) $(SUPPORT) $(VALID) $(MAIN)
 
-OBJS    = $(SRCS:.c=.o)
+OBJS    =	$(SRCS:.c=.o)
 
-RED			=	\033[0;31m
-GREEN		=	\033[0;32m
-NC			=	\033[0m
+RED		=	\033[0;31m
+GREEN	=	\033[0;32m
+NC		=	\033[0m
 
 all: $(NAME)
 

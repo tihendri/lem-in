@@ -2,6 +2,6 @@
 
 void		ft_put_error(void)
 {
-	printf("ERROR\n");
+	write(1, "ERROR\n", 6);
 	exit(-1);
 }

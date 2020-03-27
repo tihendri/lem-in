@@ -5,7 +5,7 @@ int		validation(char *line, t_lemin *lemin)
 	char	*map;
 
 	map = ft_strdup("");
-	while (get_next_line(FD, &line) && line)
+	while (get_next_line(0, &line) && line)
 	{
 		map = ft_join_free(map, ft_strjoin(line, "\n"), BOTH);
 		lemin->map = map;

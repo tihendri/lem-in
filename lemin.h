@@ -1,10 +1,9 @@
 #ifndef LEMIN_H
-# define LEMIN_H
+#define LEMIN_H
 
-# define FD 0
-# include <fcntl.h>
-# include "libft/libft.h"
-# include <stdio.h> //Remove after testing
+#include "libft/libft.h"
+#include <stdio.h> //Remove after testing
+#include <fcntl.h> //Remove after testing
 
 typedef enum	e_del
 {

@@ -11,12 +11,12 @@
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
-# define LIBFT_H
+#define LIBFT_H
 
-# include "get_next_line.h"
-# include <string.h>
-# include <unistd.h>
-# include <stdlib.h>
+#include "get_next_line.h"
+#include <string.h>
+#include <unistd.h>
+#include <stdlib.h>
 
 char				**ft_strsplit(char const *s, char c);
 char				*ft_itoa(int n);
