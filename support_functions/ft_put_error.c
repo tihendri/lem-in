@@ -2,6 +2,6 @@
 
 void		ft_put_error(void)
 {
-	write(1, "ERROR\n", 6);
+	ft_putstr("\033[1;31mERROR\n");
 	exit(-1);
 }
