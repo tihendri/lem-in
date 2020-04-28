@@ -46,8 +46,8 @@ int		main(void)
 		ft_put_error();
 	find_no_intersecting_paths(&lemin);
 	send_ants(&lemin);
-	printf("%s", lemin->map);
-	printf("\n");
+	ft_putstr(lemin->map);
+	ft_putstr("\n");
 	print_ants_on_screen(&lemin, 0);
 	return (0);
 }
