@@ -2,8 +2,6 @@
 #define LEMIN_H
 
 #include "libft/libft.h"
-#include <stdio.h> //Remove after testing
-#include <fcntl.h> //Remove after testing
 
 typedef enum	e_del
 {
