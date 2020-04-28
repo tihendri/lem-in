@@ -6,10 +6,10 @@ int		print_ants(t_lemin **lemin, int ant, char *room)
 
 	temp = *lemin;
 	if (temp->print)
-		printf(" ");
-	printf("\033[31mL\033[0m");
-	printf("\033[31m%d\033[0m", ant);
-	printf("\033[0;33m-\033[0;33m");
-	printf("\033[32m%s\033[32m", room);
+		ft_putstr(" ");
+	ft_putstr("\033[0;31mL\033[1;31m");
+	ft_putnbr(ant);
+	ft_putstr("\033[0;33m-\033[1;32m");
+	ft_putstr(room);
 	return (1);
 }

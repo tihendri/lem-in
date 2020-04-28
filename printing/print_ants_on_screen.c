@@ -105,7 +105,7 @@ void			print_ants_on_screen(t_lemin **lemin, int i)
 	temp->print = 0;
 	if (ants != temp->count_ants)
 	{
-		printf("\n");
+		ft_putstr("\n");
 		print_ants_on_screen(&temp, 0);
 	}
 }
