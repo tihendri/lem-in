@@ -42,7 +42,10 @@ int				check_tunnels(char *line)
 	while (str[i])
 	{
 		if (!check_room(str[i]))
+		{
+			ft_free_str(str);
 			return (0);
+		}
 		i++;
 	}
 	if (i == 2)
@@ -50,5 +53,6 @@ int				check_tunnels(char *line)
 		ft_free_str(str);
 		return (1);
 	}
+	ft_free_str(str);
 	return (0);
 }
