@@ -23,8 +23,8 @@ char		*ft_join_free(char *str1, char *str2, t_del string)
 		final[i++] = str2[j++];
 	final[i] = '\0';
 	if (string == BOTH || string == FIRST)
-		free(str1);
+		ft_strclr(str1);
 	if (string == BOTH || string == SECOND)
-		free(str2);
+		ft_strclr(str2);
 	return (final);
 }
