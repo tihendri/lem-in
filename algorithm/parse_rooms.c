@@ -19,8 +19,9 @@ static void	push_other_rooms(t_lemin **lemin, t_rooms *room)
 			rooms[i] = temp->rooms[i];
 		i++;
 	}
-	free(temp->rooms);
+	// free(temp->rooms);
 	temp->rooms = rooms;
+	free(rooms);
 }
 
 int			parse_rooms(char *line, t_lemin *lemin)
@@ -48,6 +49,8 @@ int			parse_rooms(char *line, t_lemin *lemin)
 		lemin->start_room = 1;
 	}
 	ft_free_str(str);
+	free(room->title);
+	free(room);
 	lemin->count_rooms++;
 	return (1);
 }
