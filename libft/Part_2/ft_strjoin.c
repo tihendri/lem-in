@@ -21,6 +21,7 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*concatenation;
+	char	*return_str;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
@@ -28,5 +29,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	if (concatenation == NULL)
 		return (NULL);
 	ft_strcpy(concatenation, s1);
-	return (ft_strcat(concatenation, s2));
+	return_str = ft_strcat(concatenation, s2);
+	free(concatenation);
+	return (return_str);
 }
