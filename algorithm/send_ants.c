@@ -14,10 +14,12 @@ static void	push_ants(t_lemin **lemin, t_ants *ants)
 	while (++i < temp->count_ants)
 		ant[i] = temp->ants[i];
 	ant[i] = ants;
-	if (temp->count_ants)
-		free(temp->ants);
+	free(ants);
+	// if (temp->count_ants)
+	// 	free(temp->ants);
 	temp->count_ants++;
 	temp->ants = ant;
+	free(ant);
 }
 
 static void	push_ants_to_strcat(t_lemin **lemin, int path)
