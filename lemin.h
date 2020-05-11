@@ -99,6 +99,7 @@ int     		validation(char *line, t_lemin *lemin);
 t_rooms		    *get_room(t_lemin **lemin, int type, int index);
 void    		find_no_intersecting_paths(t_lemin **lemin);
 void    		free_str(char **str);
-void    		ft_put_error(void);
+void    		ft_put_error();
+void			ft_put_error_only_lemin(t_lemin *lemin);
 void			print_ants_on_screen(t_lemin **lemin, int i);
 #endif
