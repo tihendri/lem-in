@@ -19,8 +19,9 @@ static void	push_tunnels(t_lemin **lemin, t_tunnel *tunnel)
 			tunnel_temp[i] = temp->tunnels[i];
 		i++;
 	}
-	free(temp->tunnels);
+	// free(temp->tunnels);
 	temp->tunnels = tunnel_temp;
+	free(tunnel_temp);
 }
 
 int			parse_tunnels(char *line, t_lemin *lemin)
@@ -36,6 +37,9 @@ int			parse_tunnels(char *line, t_lemin *lemin)
 	tunnel->end_i = find_room(lemin, str[1]);
 	push_tunnels(&lemin, tunnel);
 	ft_free_str(str);
+	free(tunnel->start);
+	free(tunnel->end);
+	free(tunnel);
 	lemin->count_tunnels++;
 	return (1);
 }
