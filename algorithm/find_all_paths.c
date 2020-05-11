@@ -15,8 +15,9 @@ static void	push_others_paths(t_lemin **set, t_path *path)
 		arr[i] = temp->good_path[i];
 	arr[i] = path;
 	temp->count_good++;
-	free(temp->good_path);
+	// free(temp->good_path);
 	temp->good_path = arr;
+	free(arr);
 }
 
 int			push_first_path(const int *arr, t_lemin **lemin, int length)
@@ -32,6 +33,8 @@ int			push_first_path(const int *arr, t_lemin **lemin, int length)
 	while (++i < length)
 		good_path->path[i] = arr[i];
 	push_others_paths(lemin, good_path);
+	free(good_path->path);
+	free(good_path);
 	return (0);
 }
 
