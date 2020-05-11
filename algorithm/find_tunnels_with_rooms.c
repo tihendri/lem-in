@@ -24,8 +24,10 @@ static int	push_tunnel_to_strcat(t_lemin **lemin, int *array, t_rooms *room)
 			path_arr[i] = temp->paths[i];
 		i++;
 	}
-	free(temp->paths);
+	free(path);
+	// free(temp->paths);
 	temp->paths = path_arr;
+	free(path_arr);
 	return (1);
 }
 
@@ -83,8 +85,12 @@ int			find_tunnels_with_rooms(t_lemin **lemin, t_rooms *start)
 	{
 		room = get_room(&temp, 3, array[i]);
 		if (!room->end && !check_in_array(temp, room))
+		{
+			// free(array);
 			find_tunnels_with_rooms(lemin, room);
+		}
 		i++;
 	}
+	free(array);
 	return (0);
 }
