@@ -16,9 +16,8 @@ static void	push_to_path_force(t_lemin **lemin, t_path *path)
 		path_to_choose[i] = temp->go_path[i];
 	path_to_choose[i] = path;
 	temp->count_chosen_path++;
-	// free(temp->go_path);
+	free(temp->go_path);
 	temp->go_path = path_to_choose;
-	free(path_to_choose);
 }
 
 static int	check_room_in_array(t_lemin **lemin, int index)
