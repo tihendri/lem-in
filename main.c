@@ -25,7 +25,6 @@ void	struct_populate(t_lemin **lemin)
 	temp->good_path = 0;
 	temp->go_path = 0;
 	*lemin = temp;
-	free(temp);
 }
 
 int		main(void)
@@ -36,21 +35,19 @@ int		main(void)
 
 	struct_populate(&lemin);
 	if (!validation(0, lemin) || !check_start_end(lemin))
-		ft_put_error_only_lemin(lemin);
+		ft_put_error();
 	start = get_room(&lemin, 1, 0);
 	if (start->end && start->start)
-		ft_put_error_only_lemin(lemin);
+		ft_put_error();
 	find_tunnels_with_rooms(&lemin, start);
 	array = (int *)malloc(sizeof(int) * (lemin->count_rooms));
 	find_all_paths(&lemin, array, 0, start);
 	if (!lemin->count_good)
-		ft_put_error_only_lemin(lemin);
+		ft_put_error();
 	find_no_intersecting_paths(&lemin);
 	send_ants(&lemin);
 	ft_putstr(lemin->map);
 	ft_putstr("\n");
 	print_ants_on_screen(&lemin, 0);
-	free(array);
-	// free(lemin);
 	return (0);
 }
