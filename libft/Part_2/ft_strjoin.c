@@ -21,15 +21,12 @@
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	char	*concatenation;
-	char	*return_str;
 
 	if (s1 == NULL || s2 == NULL)
 		return (NULL);
 	concatenation = ft_strnew(ft_strlen(s1) + ft_strlen(s2));
 	if (concatenation == NULL)
 		return (NULL);
-	ft_strcpy(concatenation, s1);
-	return_str = ft_strcat(concatenation, s2);
-	free(concatenation);
-	return (return_str);
+	ft_strcpy(concatenation, s1);;
+	return (ft_strcat(concatenation, s2));
 }
