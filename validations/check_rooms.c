@@ -44,27 +44,18 @@ int				check_room_coordinates(char *line)
 		if (i == 0)
 		{
 			if (!check_room(str[i]))
-			{
-				ft_free_str(str);
 				return (0);
-			}
 		}
 		else
 		{
 			if (!check_coordinates(str[i]))
-			{
-				ft_free_str(str);
 				return (0);
-			}
 		}
 		i++;
 	}
 	if (i == 3)
-	{
-		ft_free_str(str);
 		return (1);
-	}
-	ft_free_str(str);
+
 	return (0);
 }
 
