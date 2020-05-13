@@ -3,12 +3,12 @@
 
 #include "libft/libft.h"
 
-typedef enum	e_del
-{
-	FIRST,
-	SECOND,
-	BOTH
-}				t_del;
+// typedef enum	e_del
+// {
+// 	FIRST,
+// 	SECOND,
+// 	BOTH
+// }				t_del;
 
 typedef struct	s_rooms
 {
@@ -70,7 +70,7 @@ typedef struct	s_lemin
 	t_path  	**go_path;
 }				t_lemin;
 
-char    		*ft_join_free(char *str1, char *str2, t_del string);
+char    		*ft_join_free(char *str1, char *str2);
 int				bad_rooms(t_lemin **lemin);
 int     		check_ants(char *line, t_lemin *lemin);
 int     		check_change_tunnel(t_lemin *lemin);
