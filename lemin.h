@@ -19,9 +19,10 @@ typedef struct	s_rooms
 }				t_rooms;
 
 
-//Tunnels refer to links between rooms.
-//Paths refer to the direction to the tunnels.
-
+/*
+**Tunnels refer to links between rooms.
+**Paths refer to the direction to the tunnels.
+*/
 
 typedef struct	s_tunnel
 {
