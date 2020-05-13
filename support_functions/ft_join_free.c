@@ -1,6 +1,6 @@
 #include "../lemin.h"
 
-char		*ft_join_free(char *str1, char *str2, t_del string)
+char		*ft_join_free(char *str1, char *str2)
 {
 	char	*final;
 	size_t	i;
@@ -22,9 +22,9 @@ char		*ft_join_free(char *str1, char *str2, t_del string)
 	while (str2[j])
 		final[i++] = str2[j++];
 	final[i] = '\0';
-	if (string == BOTH || string == FIRST)
-		ft_strclr(str1);
-	if (string == BOTH || string == SECOND)
-		ft_strclr(str2);
+	// if (string == BOTH || string == FIRST)
+	// 	ft_strclr(str1);
+	// if (string == BOTH || string == SECOND)
+	// 	ft_strclr(str2);
 	return (final);
 }
