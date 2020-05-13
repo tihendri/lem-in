@@ -27,6 +27,20 @@ void	struct_populate(t_lemin **lemin)
 	*lemin = temp;
 }
 
+void	freedom(t_tunnel *tunnel,t_path *gopath, t_path *path, t_rooms *rooms)
+{
+	if (*tunnel->start)
+		free(tunnel->start);
+	if (*tunnel->end)
+		free(tunnel->end);
+	if (*path->path)
+		free(path->path);
+	if (*gopath->path)
+		free(gopath->path);
+	if (*rooms->title)
+		free(rooms->title);
+}
+
 int		main(void)
 {
 	t_lemin	*lemin;
@@ -49,5 +63,22 @@ int		main(void)
 	ft_putstr(lemin->map);
 	ft_putstr("\n");
 	print_ants_on_screen(&lemin, 0);
+	freedom(*lemin->tunnels, *lemin->go_path, *lemin->paths, *lemin->rooms);
+	// free(start->title);
+	// free(start);
+	free(*lemin->ants);
+	free(lemin->ants);
+	free(*lemin->rooms);
+	free(lemin->rooms);
+	free(*lemin->tunnels);
+	free(lemin->tunnels);
+	free(*lemin->paths);
+	free(lemin->paths);
+	free(lemin->map);
+	free(*lemin->go_path);
+	free(lemin->go_path);
+	free(lemin->good_path);
+	free(lemin);
+	free(array);
 	return (0);
 }
