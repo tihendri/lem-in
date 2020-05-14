@@ -2,15 +2,13 @@
 
 int		validation(char *line, t_lemin *lemin)
 {
-	char	*map;
 	char	*join_line;
 
-	map = ft_strdup("");
+	lemin->map = (char *)malloc(sizeof(char) * 2048 * 32);
 	while (get_next_line(0, &line) && line)
 	{
 		join_line = ft_strjoin(line, "\n");
-		map = ft_strjoin(map, join_line);
-		lemin->map = map;
+		lemin->map = ft_strcat(lemin->map, join_line);
 		if (!lemin->count_ants && check_ants(line, lemin))
 			;
 		else if (check_commands(line, lemin) || check_comments(line))
