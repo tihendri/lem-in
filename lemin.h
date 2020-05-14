@@ -3,13 +3,6 @@
 
 #include "libft/libft.h"
 
-// typedef enum	e_del
-// {
-// 	FIRST,
-// 	SECOND,
-// 	BOTH
-// }				t_del;
-
 typedef struct	s_rooms
 {
 	char		*title;
@@ -102,4 +95,5 @@ void    		find_no_intersecting_paths(t_lemin **lemin);
 void    		free_str(char **str);
 void    		ft_put_error();
 void			print_ants_on_screen(t_lemin **lemin, int i);
+
 #endif
