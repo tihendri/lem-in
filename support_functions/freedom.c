@@ -26,7 +26,6 @@ void	    freedom(t_lemin *lemin)
 	t_rooms		*room_t;
 	t_tunnel	*tunnel_t;
 	t_path		*path_t;
-	t_path		*path_ti;
 	t_path		*path_tim;
 
 	i = 0;
@@ -89,14 +88,5 @@ void	    freedom(t_lemin *lemin)
 		free(lemin->good_path);
 	}
 	if (lemin->go_path != 0)
-	{
-		while (lemin->count_chosen_path > i)
-		{
-			path_ti = lemin->go_path[i];
-			free_path(path_ti);
-			free(lemin->go_path[i]);
-			i++;
-		}
 		free(lemin->go_path);
-	}
 }
