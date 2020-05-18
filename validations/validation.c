@@ -4,7 +4,7 @@ int		validation(char *line, t_lemin *lemin)
 {
 	char	*join_line;
 
-	lemin->map = (char *)malloc(sizeof(char) * 2048 * 32);
+	lemin->map = (char *)malloc(sizeof(char) * 4096 * 64);
 	while (get_next_line(0, &line) && line)
 	{
 		join_line = ft_strjoin(line, "\n");
