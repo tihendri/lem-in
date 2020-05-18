@@ -89,18 +89,8 @@ void	freedom(t_lemin *lemin)
 		free(lemin->paths[i]);
 		i++;
 	}
-	free(lemin->paths);
 	free(lemin->map);
 	i = 0;
-	while (lemin->count_chosen_path > i)
-	{
-		path_ti = lemin->go_path[i];
-		free_path(path_ti);
-		free(lemin->go_path[i]);
-		i++;
-	}
-	i = 0;
-	free(lemin->go_path);
 	while (lemin->count_good > i)
 	{
 		path_tim = lemin->good_path[i];
@@ -108,8 +98,16 @@ void	freedom(t_lemin *lemin)
 		free(lemin->good_path[i]);
 		i++;
 	}
-	free(*lemin->good_path);
 	free(lemin->good_path);
+	free(lemin->paths);
+	while (lemin->count_chosen_path > i)
+	{
+		path_ti = lemin->go_path[i];
+		free_path(path_ti);
+		free(lemin->go_path[i]);
+		i++;
+	}
+	free(lemin->go_path);
 }
 
 int		main(void)
