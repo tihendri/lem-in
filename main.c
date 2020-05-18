@@ -27,33 +27,88 @@ void	struct_populate(t_lemin **lemin)
 	*lemin = temp;
 }
 
-void	freedom(t_tunnel *tunnel,t_path *gopath, t_path *path, t_rooms *rooms)
+void	free_tunnel(t_tunnel *tunnel)
 {
 	if (*tunnel->start)
 		free(tunnel->start);
 	if (*tunnel->end)
 		free(tunnel->end);
-	if (*path->path)
-		free(path->path);
-	if (*gopath->path)
-		free(gopath->path);
+}
+
+void	free_room(t_rooms *rooms)
+{
 	if (*rooms->title)
 		free(rooms->title);
 }
 
-void	freedom_2(t_lemin *lemin)
+void	free_path(t_path *pathenon)
 {
-	free(*lemin->ants);
+	if (*pathenon->path)
+		free(pathenon->path);
+}
+
+void	freedom(t_lemin *lemin)
+{
+	int 		i;
+	t_rooms		*room_t;
+	t_tunnel	*tunnel_t;
+	t_path		*path_t;
+	t_path		*path_ti;
+	t_path		*path_tim;
+
+	i = 0;
+	while (lemin->count_ants > i)
+	{
+		free(lemin->ants[i]);
+		i++;
+	}
+	i = 0;
 	free(lemin->ants);
-	free(*lemin->rooms);
+	while (lemin->count_rooms > i)
+	{
+		room_t = lemin->rooms[i];
+		free_room(room_t);
+		free(lemin->rooms[i]);
+		i++;
+	}
+	i = 0;
 	free(lemin->rooms);
-	free(*lemin->tunnels);
+	while (lemin->count_tunnels > i)
+	{
+		tunnel_t = lemin->tunnels[i];
+		free_tunnel(tunnel_t);
+		free(lemin->tunnels[i]);
+		i++;
+	}
+	i = 0;
 	free(lemin->tunnels);
-	free(*lemin->paths);
+	while (lemin->count_paths > i)
+	{
+		path_t = lemin->paths[i];
+		free_path(path_t);
+		free(lemin->paths[i]);
+		i++;
+	}
 	free(lemin->paths);
 	free(lemin->map);
-	free(*lemin->go_path);
+	i = 0;
+	while (lemin->count_chosen_path > i)
+	{
+		path_ti = lemin->go_path[i];
+		free_path(path_ti);
+		free(lemin->go_path[i]);
+		i++;
+	}
+	i = 0;
 	free(lemin->go_path);
+	while (lemin->count_good > i)
+	{
+		path_tim = lemin->good_path[i];
+		free_path(path_tim);
+		free(lemin->good_path[i]);
+		i++;
+	}
+	free(*lemin->good_path);
 	free(lemin->good_path);
 }
 
@@ -79,8 +134,7 @@ int		main(void)
 	ft_putstr(lemin->map);
 	ft_putstr("\n");
 	print_ants_on_screen(&lemin, 0);
-	freedom(*lemin->tunnels, *lemin->go_path, *lemin->paths, *lemin->rooms);
-	freedom_2(lemin);
+	freedom(lemin);
 	free(lemin);
 	free(array);
 	return (0);
