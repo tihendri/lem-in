@@ -20,7 +20,11 @@ int		validation(char *line, t_lemin *lemin)
 		else if (check_line_break(line))
 			break ;
 		else
+		{
+			free(join_line);
+			free(line);
 			return (0);
+		}
 		free(join_line);
 		free(line);
 	}
