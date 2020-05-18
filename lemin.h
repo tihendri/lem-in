@@ -93,7 +93,9 @@ int     		validation(char *line, t_lemin *lemin);
 t_rooms		    *get_room(t_lemin **lemin, int type, int index);
 void    		find_no_intersecting_paths(t_lemin **lemin);
 void    		free_str(char **str);
-void    		ft_put_error();
+void    		ft_put_error(t_lemin *lemin, int *array);
 void			print_ants_on_screen(t_lemin **lemin, int i);
+void			struct_populate(t_lemin **lemin);
+void		    freedom(t_lemin *lemin);
 
 #endif
