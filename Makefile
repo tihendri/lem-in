@@ -13,6 +13,8 @@ PRINT	=	printing/print_ants.c printing/print_ants_on_screen.c
 SUPPORT =	support_functions/ft_join_free.c \
 			support_functions/ft_put_error.c \
 			support_functions/support_functions.c \
+			support_functions/struct_populate.c \
+			support_functions/freedom.c
 
 VALID	=	validations/check_ants.c validations/check_change_tunnel.c \
 			validations/check_commands.c validations/check_comments.c \
